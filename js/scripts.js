@@ -2,9 +2,10 @@ $(document).ready(function(){
     $("#pigLatin").submit(function(event) {
         event.preventDefault();
         let word = $('input#sentence').val();
+        $('#output').text(pigLatin(word)); 
     
     });
-    $('#output').text(pigLatin(word)); 
+
 });
 function pigLatin(str) {
     str = str.toLowerCase()
@@ -23,3 +24,4 @@ function pigLatin(str) {
         return str.slice(vowelIndex) + str.slice(0, vowelIndex) + "ay"; 
     }
 }
+
