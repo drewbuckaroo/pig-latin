@@ -27,7 +27,7 @@ function pigLatin(str) {
 
 function pigLatinRegex(str) {
     if (/^qu/i.test(str)){
-        let strX = str.split(/^qu/i());
+        let strX = str.split(/^(qu)/i);
         strX.reverse();
         strX.push('ay');
         return strX.join("");
@@ -36,7 +36,7 @@ function pigLatinRegex(str) {
         return str.concat('way');
     }
     else if (/^[^aieou]/i.test(str)){
-        let newStr = str.split(/^[^aeiou]/i)
+        let newStr = str.split(/^([^aeiou]{0,})/i);
         newStr.reverse();
         newStr.push('ay');
         return newStr.join("");
